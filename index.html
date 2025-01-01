@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Nawigacja -->
+    <nav>
+        <ul>
+            <li><a href="#home">Strona Główna</a></li>
+            <li><a href="#projects">Moje Projekty</a></li>
+            <li><a href="#about">O mnie</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Strona Główna -->
+    <section id="home">
+        <h1>Witaj na moim portfolio!</h1>
+        <p>Jestem Bartosz, jestem studentem trzeciego roku Elektroniki i telekomunikacji. Interesuje się sieciami mobilnymi oraz
+            układami mikrofalowymi. Szukam pierwszego doświadczenia w branży telekomunikacji.
+        </p>
+    </section>
+
+    <!-- Moje Projekty -->
+    <section id="projects">
+        <h2>Moje Projekty</h2>
+        <div class="project">
+            <h3>Symulacja sieci LTE na terenie miasta Łomża</h3>
+            <p>W tym projekcie wykonana jest symulacja sieci LTE 2600MHz na terenie miasta Łomża. Obliczenia zostały wykonane w Altair Feko Pro Man. 
+                Symulowane są rzeczywiste nadajniki operatorów NetWorks!. Symulacja wykonana na podstawie dokumentacji UKE. Projekt pokazuje moje 
+                umiejętności rozumienia zagadnień związanych z sieciami mobilnymi, umiejętność korzystania z danych UKE,
+                a także znajomość oprogramowania Altair Feko. <br>
+                W repozytorium poniżej znajduje się projekt oraz jego dokumentacja.
+            </p>
+            
+            <!-- Slideshow Container - Przeniesiony poza <p> -->
+            <div class="slideshow-container">
+                <div class="slides fade">
+                    <img src="images/feko_mapabts.png" alt="Projekt 1 - Obraz 1" loading="lazy">
+                </div>
+                <div class="slides fade">
+                    <img src="images/feko_throughput.png" alt="Projekt 1 - Obraz 2" loading="lazy">
+                </div>
+                <div class="slides fade">
+                    <img src="images/feko_RSRP.png" alt="Projekt 1 - Obraz 3" loading="lazy">
+                </div>
+                <div class="slides fade">
+                    <img src="images/feko_SINR.png" alt="Projekt 1 - SINR" loading="lazy">
+                </div>
+                <div class="slides fade">
+                    <img src="images/feko_podzial_komorki.png" alt="Projekt 1 - Podział Komórki" loading="lazy">
+                </div>
+                <!-- Nawigacja dla slajdów -->
+                <a class="prev" onclick="changeSlide(-1, 0)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1, 0)">&#10095;</a>
+            </div>
+            <!-- Wskaźniki slajdów -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(0, 0)"></span> 
+                <span class="dot" onclick="currentSlide(1, 0)"></span> 
+                <span class="dot" onclick="currentSlide(2, 0)"></span> 
+                <span class="dot" onclick="currentSlide(3, 0)"></span> 
+                <span class="dot" onclick="currentSlide(4, 0)"></span> 
+            </div>
+            <a href="https://github.com/Merituum/FekoLomza">Repozytorium - Projekt Feko</a>
+        </div>
+        <div class="project">
+            <h3>Projekt anteny logarytmiczno - periodycznej do odbioru telewizji naziemnej</h3>
+            <p>Projekt o charakterze teoretycznym oraz praktycznym. W repozytorium znajduje się dokumentacja projektu, plik z 
+                symulacją oraz kalkulacje, za pomocą których zaprojektowano antenę. Na ich podstawie można wykonać ten projekt samodzielnie.
+            </p>
+            <a href="https://github.com/Merituum/TVantenna">Repozytorium - Antena Telewizyjna</a>
+        </div>
+        <!-- Dodaj więcej projektów w podobny sposób -->
+        <div class="project">
+            <h3>Mapa nadajników sieci mobilnej w Python</h3>
+            <p>Projekt ten jest klonem rozwiązania do wyszukiwania nadajników - BTSearch.pl - rozwiniętym o wyświetlanie
+                azymutów, pod jakimi skierowane są anteny na nadajnikach wszystkich operatorów. Rozwiązanie te może być
+                przydatne dla osób zastanawiających się nad wyborem operatora sieci mobilnej lub osób próbujących 
+                poprawić jakość działania ich łącza. W repozytorium wydanie aplikacji, kod oraz jego dokumentacja.
+            </p>
+            <a href="https://github.com/Merituum/mnsm_BTS_map">Repozytorium - MNSM by Merituum</a>
+        </div>
+    </section>
+
+    <!-- O mnie -->
+    <section id="about">
+        <h2>O mnie</h2>
+        <p>Tu możesz zamieścić więcej informacji o sobie, swojej edukacji, doświadczeniu i umiejętnościach.</p>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <form id="contactForm">
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Wyślij</button>
+        </form>
+        <p id="formResponse"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
